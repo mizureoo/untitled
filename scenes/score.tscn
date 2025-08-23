@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://1nogephfg337"]
+
+[ext_resource type="FontFile" uid="uid://cicw1ru1oftxc" path="res://assets/fonts/monogram.ttf" id="1_ceanc"]
+[ext_resource type="Texture2D" uid="uid://dg5vh0edrgmdl" path="res://assets/sprites/Pixel Platter_spritesheet.png" id="2_vfhx4"]
+
+[node name="Score" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = -13.0
+offset_right = 64.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("1_ceanc")
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="Pizza" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_vfhx4")
+region_enabled = true
+region_rect = Rect2(160, 0, 16, 16)
