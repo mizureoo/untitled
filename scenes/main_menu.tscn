@@ -193,7 +193,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_8ln24")
 text = "Untitled Mouse Game
-(pls get the reference)"
+(pls get the reference)
+placeholder lang to"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="ButtonContainer/Play" to="." method="_on_play_pressed"]
