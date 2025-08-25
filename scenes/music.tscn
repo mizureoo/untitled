@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://2da618xb5cl7"]
+
+[ext_resource type="AudioStream" uid="uid://blkfnlr7reaah" path="res://assets/music/Three Red Hearts - Modern Bits.ogg" id="1_05ggv"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_05ggv")
+autoplay = true
+bus = &"Music"
