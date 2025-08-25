@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://160xuhhlqqja"
-path="res://.godot/imported/Tiny Alchemist Sprite Sheet 48x32.png-17cdca2fb649fe1588483323bd79a9bb.ctex"
+uid="uid://cak08ecl6l8oc"
+path="res://.godot/imported/PowerStationTileset.png-9a36307f26b6e3e5fd772826f08ac2fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Tiny Alchemist Sprite Sheet 48x32.png"
-dest_files=["res://.godot/imported/Tiny Alchemist Sprite Sheet 48x32.png-17cdca2fb649fe1588483323bd79a9bb.ctex"]
+source_file="res://assets/sprites/tilesets/PowerStationTileset.png"
+dest_files=["res://.godot/imported/PowerStationTileset.png-9a36307f26b6e3e5fd772826f08ac2fd.ctex"]
 
 [params]
 

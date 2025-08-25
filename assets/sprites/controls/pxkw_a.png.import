@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cak08ecl6l8oc"
-path="res://.godot/imported/PowerStationTileset.png-c543ea4e044c8fd4c1b2faf391b4b35a.ctex"
+uid="uid://b4nykk3pd7qdj"
+path="res://.godot/imported/pxkw_a.png-4a2f241eac3848f1a687de7d9fec692d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/PowerStationTileset.png"
-dest_files=["res://.godot/imported/PowerStationTileset.png-c543ea4e044c8fd4c1b2faf391b4b35a.ctex"]
+source_file="res://assets/sprites/controls/pxkw_a.png"
+dest_files=["res://.godot/imported/pxkw_a.png-4a2f241eac3848f1a687de7d9fec692d.ctex"]
 
 [params]
 
