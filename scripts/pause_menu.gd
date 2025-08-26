@@ -1,6 +1,5 @@
 extends Control
 
-@onready var settings_panel: Panel = $SettingsPanel
 @onready var pause_menu: Control = $"."
 @onready var grid_container: GridContainer = $GridContainer
 
@@ -22,14 +21,9 @@ func set_paused(value:bool) -> void:
 func _on_resume_pressed() -> void:
 	_is_paused = false
 	
-func _on_settings_pressed() -> void:
-	grid_container.visible = false
-	settings_panel.visible = true
-	
 func _on_return_pressed() -> void:
 	get_tree().paused = false 
 	SceneManager.change_scene("res://scenes/main_menu.tscn")
 
 func _on_back_pressed() -> void:
 	grid_container.visible = true
-	settings_panel.visible = false

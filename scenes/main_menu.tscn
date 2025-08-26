@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://xsxytjl18hpy"]
+[gd_scene load_steps=9 format=3 uid="uid://xsxytjl18hpy"]
 
 [ext_resource type="Texture2D" uid="uid://bsi7ju8dh4mkl" path="res://assets/backgrounds/1.png" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://cdsk6dp6xvw80" path="res://scripts/main_menu.gd" id="1_ekxnf"]
@@ -6,6 +6,7 @@
 [ext_resource type="VideoStream" uid="uid://ccfg6pvqi2pq0" path="res://assets/backgrounds/pixel-lofi-city.ogv" id="3_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://44pcdyeidjeu" path="res://assets/backgrounds/close.png" id="4_wu84c"]
 [ext_resource type="FontFile" uid="uid://bqtebpxmpm6ps" path="res://assets/fonts/Kaph-Regular.ttf" id="5_8ln24"]
+[ext_resource type="Script" uid="uid://bs74xfy038srs" path="res://scripts/audio_control.gd" id="7_oa1go"]
 
 [sub_resource type="Theme" id="Theme_rtw2f"]
 default_font = ExtResource("3_bqqt6")
@@ -56,6 +57,8 @@ offset_right = 407.0
 offset_bottom = 24.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
 theme_override_fonts/font = ExtResource("5_8ln24")
 text = "Untitled Mouse Game
 (pls get the reference)
@@ -102,7 +105,6 @@ theme_override_font_sizes/font_size = 32
 text = "Quit"
 
 [node name="SettingsPanel" type="Panel" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 352.0
 offset_top = 328.0
@@ -132,6 +134,85 @@ grow_horizontal = 2
 theme_override_fonts/font = ExtResource("3_bqqt6")
 theme_override_font_sizes/font_size = 32
 text = "Settings"
+
+[node name="Volume" type="VBoxContainer" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -54.0
+offset_right = 164.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Music Volume" type="HBoxContainer" parent="SettingsPanel/Volume"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="SettingsPanel/Volume/Music Volume"]
+layout_mode = 2
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="SettingsPanel/Volume/Music Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("7_oa1go")
+audio_bus_name = "Music"
+
+[node name="SFX Volume" type="HBoxContainer" parent="SettingsPanel/Volume"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="SettingsPanel/Volume/SFX Volume"]
+layout_mode = 2
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="SettingsPanel/Volume/SFX Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("7_oa1go")
+audio_bus_name = "SFX"
+
+[node name="Mute All" type="HBoxContainer" parent="SettingsPanel/Volume"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="SettingsPanel/Volume/Mute All"]
+layout_mode = 2
+text = "Mute All"
+horizontal_alignment = 1
+
+[node name="MuteButton" type="CheckButton" parent="SettingsPanel/Volume/Mute All"]
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -106.0
+offset_top = -69.0
+offset_right = 106.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Reset to Defaults"
 
 [node name="CreditsPanel" type="Panel" parent="."]
 visible = false
@@ -217,4 +298,8 @@ horizontal_alignment = 1
 [connection signal="pressed" from="ButtonContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="ButtonContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="SettingsPanel/Return" to="." method="_ready"]
+[connection signal="value_changed" from="SettingsPanel/Volume/Music Volume/MusicSlider" to="SettingsPanel/Volume/Music Volume/MusicSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="SettingsPanel/Volume/SFX Volume/SFXSlider" to="SettingsPanel/Volume/SFX Volume/SFXSlider" method="_on_value_changed"]
+[connection signal="toggled" from="SettingsPanel/Volume/Mute All/MuteButton" to="." method="_on_mute_button_toggled"]
+[connection signal="pressed" from="SettingsPanel/ResetButton" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="CreditsPanel/Return" to="." method="_ready"]
