@@ -14,11 +14,28 @@ const DEFAULT_SFX_VOLUME: float = 0.8
 const DEFAULT_MUTE: bool = false
 
 func _ready() -> void:
+	# Panels setup
 	button_container.visible = true
 	settings_panel.visible = false
 	credits_panel.visible = false
+
+	# Connect mute button
 	mute_button.toggled.connect(_on_mute_button_toggled)
-	
+
+	# Connect sliders
+	music_slider.value_changed.connect(_on_music_slider_value_changed)
+	sfx_slider.value_changed.connect(_on_sfx_slider_value_changed)
+
+	# Initialize UI to defaults
+	music_slider.value = DEFAULT_MUSIC_VOLUME
+	sfx_slider.value = DEFAULT_SFX_VOLUME
+	mute_button.button_pressed = DEFAULT_MUTE
+
+	# Apply defaults to audio
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(DEFAULT_MUSIC_VOLUME))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(DEFAULT_SFX_VOLUME))
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), DEFAULT_MUTE)
+
 func _on_play_pressed() -> void:
 	SceneManager.change_scene("res://scenes/level_1.tscn")
 
@@ -46,3 +63,9 @@ func _on_reset_pressed() -> void:
 
 func _on_mute_button_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), toggled_on)
+
+func _on_music_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(value))
+
+func _on_sfx_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(value))
