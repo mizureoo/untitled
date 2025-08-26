@@ -272,21 +272,21 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="Developer" type="Label" parent="CreditsPanel/DeveloperNames"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_bqqt6")
-theme_override_font_sizes/font_size = 32
-text = "Lego, Mean Dianne"
-horizontal_alignment = 1
-
-[node name="Developer2" type="Label" parent="CreditsPanel/DeveloperNames"]
+[node name="D1" type="Label" parent="CreditsPanel/DeveloperNames"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_bqqt6")
 theme_override_font_sizes/font_size = 32
 text = "Exala, Martha Nicole"
 horizontal_alignment = 1
 
-[node name="Developer3" type="Label" parent="CreditsPanel/DeveloperNames"]
+[node name="D2" type="Label" parent="CreditsPanel/DeveloperNames"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_font_sizes/font_size = 32
+text = "Lego, Mean Dianne"
+horizontal_alignment = 1
+
+[node name="D3" type="Label" parent="CreditsPanel/DeveloperNames"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_bqqt6")
 theme_override_font_sizes/font_size = 32
