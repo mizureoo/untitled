@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bsi7ju8dh4mkl" path="res://assets/backgrounds/1.png" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://cdsk6dp6xvw80" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://cicw1ru1oftxc" path="res://assets/fonts/monogram.ttf" id="3_bqqt6"]
-[ext_resource type="VideoStream" uid="uid://ccfg6pvqi2pq0" path="res://assets/backgrounds/pixel-lofi-city.ogv" id="3_rtw2f"]
+[ext_resource type="VideoStream" uid="uid://ccfg6pvqi2pq0" path="res://assets/backgrounds/pixel-lofi-city.ogv" id="3_oa1go"]
 [ext_resource type="Texture2D" uid="uid://44pcdyeidjeu" path="res://assets/backgrounds/close.png" id="4_wu84c"]
 [ext_resource type="FontFile" uid="uid://bqtebpxmpm6ps" path="res://assets/fonts/Kaph-Regular.ttf" id="5_8ln24"]
 [ext_resource type="Script" uid="uid://bs74xfy038srs" path="res://scripts/audio_control.gd" id="7_oa1go"]
@@ -29,7 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("3_rtw2f")
+stream = ExtResource("3_oa1go")
 autoplay = true
 expand = true
 loop = true
