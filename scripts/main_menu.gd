@@ -46,8 +46,8 @@ func _on_quit_pressed() -> void:
 
 func _on_reset_pressed() -> void:
 	# Reset values in Settings
-	Settings.music_volume = 0.8
-	Settings.sfx_volume = 0.8
+	Settings.music_volume = 0.5
+	Settings.sfx_volume = 0.5
 	Settings.mute = false
 
 	# Update UI
