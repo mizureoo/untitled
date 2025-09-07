@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://xsxytjl18hpy"]
+[gd_scene load_steps=8 format=3 uid="uid://xsxytjl18hpy"]
 
-[ext_resource type="Texture2D" uid="uid://bsi7ju8dh4mkl" path="res://assets/backgrounds/1.png" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://cdsk6dp6xvw80" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://cicw1ru1oftxc" path="res://assets/fonts/monogram.ttf" id="3_bqqt6"]
 [ext_resource type="VideoStream" uid="uid://ccfg6pvqi2pq0" path="res://assets/backgrounds/pixel-lofi-city.ogv" id="3_oa1go"]
@@ -33,16 +32,6 @@ stream = ExtResource("3_oa1go")
 autoplay = true
 expand = true
 loop = true
-
-[node name="Background" type="TextureRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_06t4h")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
