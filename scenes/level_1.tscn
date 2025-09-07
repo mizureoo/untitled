@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://d1ssirq17kt27"]
+[gd_scene load_steps=26 format=4 uid="uid://d1ssirq17kt27"]
 
 [ext_resource type="Texture2D" uid="uid://qxtm0da0gxq0" path="res://assets/sprites/tilesets/ExclusionTileset.png" id="1_014kd"]
 [ext_resource type="PackedScene" uid="uid://dk1qpgufp2lkx" path="res://scenes/player.tscn" id="2_bswci"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://vmy3dofdrwkr" path="res://assets/backgrounds/Night/1.png" id="4_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://c2spgk05it1ui" path="res://scenes/pause_menu.tscn" id="5_4nkto"]
 [ext_resource type="Texture2D" uid="uid://bthgekybrs6tt" path="res://assets/sprites/Sprite-0001-Sheet.png" id="6_1s4pk"]
+[ext_resource type="Texture2D" uid="uid://d2drpdpgaoyv6" path="res://assets/sprites/Sprite-0002.png" id="7_x2xxo"]
 [ext_resource type="FontFile" uid="uid://cicw1ru1oftxc" path="res://assets/fonts/monogram.ttf" id="8_2aecg"]
 [ext_resource type="Texture2D" uid="uid://b4nykk3pd7qdj" path="res://assets/sprites/controls/pxkw_a.png" id="9_6dial"]
 [ext_resource type="Texture2D" uid="uid://536g51ep2lsq" path="res://assets/sprites/controls/pxkw_space_2.png" id="10_2aecg"]
@@ -1068,11 +1069,78 @@ texture = ExtResource("6_1s4pk")
 14:15/0 = 0
 15:15/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2cbcq"]
+texture = ExtResource("7_x2xxo")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_fc0e3"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_feb5d")
 sources/1 = SubResource("TileSetAtlasSource_pa8r4")
 sources/3 = SubResource("TileSetAtlasSource_1s4pk")
+sources/4 = SubResource("TileSetAtlasSource_2cbcq")
 
 [sub_resource type="Theme" id="Theme_so66j"]
 default_font = ExtResource("8_2aecg")
@@ -1117,7 +1185,7 @@ tile_set = SubResource("TileSet_fc0e3")
 
 [node name="Foreground(Deco)" type="TileMapLayer" parent="."]
 position = Vector2(0, 440)
-tile_map_data = PackedByteArray("AAAdAPX/AwAFAA0AABAcAPX/AwAGAA0AABAbAPX/AwAHAA0AABAaAPX/AwAIAA0AABAZAPX/AwAJAA0AABAdAPb/AwAFAA4AABAcAPb/AwAGAA4AABAbAPb/AwAHAA4AABAaAPb/AwAIAA4AABAZAPb/AwAJAA4AABAdAPf/AwAFAA8AABAcAPf/AwAGAA8AABAbAPf/AwAHAA8AABAaAPf/AwAIAA8AABAZAPf/AwAJAA8AABAIAPX/AwAJAA0AAAAHAPX/AwAIAA0AAAAGAPX/AwAHAA0AAAAFAPX/AwAGAA0AAAAEAPX/AwAFAA0AAAAIAPb/AwAJAA4AAAAHAPb/AwAIAA4AAAAGAPb/AwAHAA4AAAAFAPb/AwAGAA4AAAAEAPb/AwAFAA4AAAAIAPf/AwAJAA8AAAAHAPf/AwAIAA8AAAAGAPf/AwAHAA8AAAAFAPf/AwAGAA8AAAAEAPf/AwAFAA8AAAA=")
+tile_map_data = PackedByteArray("AAAdAPX/AwAFAA0AABAcAPX/AwAGAA0AABAbAPX/AwAHAA0AABAaAPX/AwAIAA0AABAZAPX/AwAJAA0AABAdAPb/AwAFAA4AABAcAPb/AwAGAA4AABAbAPb/AwAHAA4AABAaAPb/AwAIAA4AABAZAPb/AwAJAA4AABAdAPf/AwAFAA8AABAcAPf/AwAGAA8AABAbAPf/AwAHAA8AABAaAPf/AwAIAA8AABAZAPf/AwAJAA8AABAIAPX/AwAJAA0AAAAHAPX/AwAIAA0AAAAGAPX/AwAHAA0AAAAFAPX/AwAGAA0AAAAEAPX/AwAFAA0AAAAIAPb/AwAJAA4AAAAHAPb/AwAIAA4AAAAGAPb/AwAHAA4AAAAFAPb/AwAGAA4AAAAEAPb/AwAFAA4AAAAIAPf/AwAJAA8AAAAHAPf/AwAIAA8AAAAGAPf/AwAHAA8AAAAFAPf/AwAGAA8AAAAEAPf/AwAFAA8AAAAoAP//BAAAAAAAAAApAP//BAABAAAAAAAqAP//BAACAAAAAAArAP//BAADAAAAAAAsAP//BAAEAAAAAAAtAP//BAAFAAAAAAAuAP//BAAAAAAAAAAvAP//BAABAAAAAAAwAP//BAACAAAAAAAxAP//BAADAAAAAAAyAP//BAAEAAAAAAAzAP//BAAFAAAAAAA0AP//BAAAAAAAAAA1AP//BAABAAAAAAA2AP//BAACAAAAAAA3AP//BAADAAAAAAA4AP//BAAEAAAAAAA5AP//BAAFAAAAAAA6AP//BAAAAAAAAAA7AP//BAABAAAAAAA8AP//BAACAAAAAAA9AP//BAADAAAAAAA+AP//BAAEAAAAAAA/AP//BAAFAAAAAAA=")
 tile_set = SubResource("TileSet_fc0e3")
 
 [node name="Tutorial" type="Control" parent="."]
