@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name PlayerController
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -250.0
