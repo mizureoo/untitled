@@ -1626,7 +1626,7 @@ text = "to jump"
 position = Vector2(2182, 419)
 
 [node name="Player" parent="." instance=ExtResource("18_ytidy")]
-position = Vector2(268, 399)
+position = Vector2(108, 439)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

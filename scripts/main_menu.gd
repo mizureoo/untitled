@@ -31,7 +31,7 @@ func _apply_audio_settings() -> void:
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), Settings.mute)
 
 func _on_play_pressed() -> void:
-	SceneManager.change_scene("res://scenes/level_1.tscn")
+	SceneManager.change_scene("res://scenes/levels/level_1.tscn")
 
 func _on_settings_pressed() -> void:
 	button_container.visible = false
