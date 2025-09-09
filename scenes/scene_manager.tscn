@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbs18h0v0t1jr"]
+[gd_scene load_steps=6 format=3 uid="uid://dbs18h0v0t1jr"]
 
 [ext_resource type="Script" uid="uid://dpj564m7baqvq" path="res://scripts/scene_manager.gd" id="1_we8k5"]
 
@@ -34,10 +34,15 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_we8k5"]
+resource_name = "wipe"
+step = 1.0
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a4gjy"]
 _data = {
 &"RESET": SubResource("Animation_a4gjy"),
-&"fade": SubResource("Animation_jo5df")
+&"fade": SubResource("Animation_jo5df"),
+&"wipe": SubResource("Animation_we8k5")
 }
 
 [node name="SceneManager" type="CanvasLayer"]
