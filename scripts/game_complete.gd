@@ -1,10 +1,9 @@
 extends Control
 
 @onready var stats_label: Label = $StatsLabel
-@onready var retry_button: Button = $HBoxContainer/Retry
+@onready var quit_button: Button = $Quit
 
 func _ready():
-	# Show a "Game Completed" message and stats
 	var text = "Congratulations! You completed the game!\n\n"
 	for level_data in GameManager.level_stats:
 		text += "Level %d → Score: %d, Deaths: %d\n" % [
@@ -13,6 +12,6 @@ func _ready():
 			level_data.deaths
 		]
 	stats_label.text = text
-	
-func _on_quit_pressed():
+
+func _on_quit_pressed() -> void:
 	get_tree().quit()
