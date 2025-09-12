@@ -21,6 +21,7 @@ boot_splash/show_image=false
 SceneManager="*res://scenes/scene_manager.tscn"
 Music="*res://scenes/music.tscn"
 Settings="*res://scripts/settings.gd"
+GameManager="*res://scripts/game_manager.gd"
 
 [input]
 

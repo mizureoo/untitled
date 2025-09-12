@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vir2dvowvq08"
-path="res://.godot/imported/Pixel Platter_spritesheet.png-d7d0532ae67c328249a2041fed6f4945.ctex"
+uid="uid://dob7m84gi11qp"
+path="res://.godot/imported/heart-sprite-full-health.png-7b9b891dea65822cb279ca49b09e46c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Pixel Platter_spritesheet.png"
-dest_files=["res://.godot/imported/Pixel Platter_spritesheet.png-d7d0532ae67c328249a2041fed6f4945.ctex"]
+source_file="res://assets/sprites/heart-sprite-full-health.png"
+dest_files=["res://.godot/imported/heart-sprite-full-health.png-7b9b891dea65822cb279ca49b09e46c7.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vir2dvowvq08"
-path="res://.godot/imported/Pixel Platter_spritesheet.png-d7d0532ae67c328249a2041fed6f4945.ctex"
+uid="uid://b0820fvr6a8x2"
+path="res://.godot/imported/pizza animated.png-f860b32abfe2a0812fed33f373e5d5e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Pixel Platter_spritesheet.png"
-dest_files=["res://.godot/imported/Pixel Platter_spritesheet.png-d7d0532ae67c328249a2041fed6f4945.ctex"]
+source_file="res://assets/sprites/pizza animated.png"
+dest_files=["res://.godot/imported/pizza animated.png-f860b32abfe2a0812fed33f373e5d5e4.ctex"]
 
 [params]
 

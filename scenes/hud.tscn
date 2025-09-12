@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccugcsqtogyx5"]
+
+[ext_resource type="Script" uid="uid://c6n4md4jge2yg" path="res://scripts/hud.gd" id="1_5ysmq"]
+[ext_resource type="FontFile" uid="uid://cicw1ru1oftxc" path="res://assets/fonts/monogram.ttf" id="1_oo0fn"]
+[ext_resource type="Texture2D" uid="uid://bpo2oikcmlmvw" path="res://assets/sprites/Pizza.png" id="2_5ysmq"]
+[ext_resource type="Texture2D" uid="uid://dob7m84gi11qp" path="res://assets/sprites/heart-sprite-full-health.png" id="4_6fi6k"]
+
+[node name="HUD" type="Control" node_paths=PackedStringArray("score_label", "health_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5ysmq")
+score_label = NodePath("Pizza/ScoreLabel")
+health_label = NodePath("Heart/HealthLabel")
+
+[node name="Pizza" type="Sprite2D" parent="."]
+position = Vector2(38.3409, 34.625)
+scale = Vector2(2.97727, 2.97727)
+texture = ExtResource("2_5ysmq")
+region_rect = Rect2(160, 0, 16, 16)
+
+[node name="ScoreLabel" type="Label" parent="Pizza"]
+anchors_preset = -1
+anchor_left = 0.0200833
+anchor_top = -0.0142222
+anchor_right = 0.0513333
+anchor_bottom = -0.0142222
+offset_left = 9.71883
+offset_top = -5.44355
+offset_right = 57.2813
+offset_bottom = 20.5564
+theme_override_fonts/font = ExtResource("1_oo0fn")
+theme_override_font_sizes/font_size = 16
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Heart" type="Sprite2D" parent="."]
+position = Vector2(39.9403, 78.9403)
+scale = Vector2(2.88246, 2.88246)
+texture = ExtResource("4_6fi6k")
+region_rect = Rect2(160, 0, 16, 16)
+
+[node name="HealthLabel" type="Label" parent="Heart"]
+anchors_preset = -1
+anchor_left = 0.0200833
+anchor_top = -0.0142222
+anchor_right = 0.0513333
+anchor_bottom = -0.0142222
+offset_left = 9.71883
+offset_top = -5.44355
+offset_right = 57.2813
+offset_bottom = 20.5564
+theme_override_fonts/font = ExtResource("1_oo0fn")
+theme_override_font_sizes/font_size = 16
+text = "0"
+metadata/_edit_use_anchors_ = true

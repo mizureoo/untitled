@@ -1,15 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://xsxytjl18hpy"]
 
 [ext_resource type="Script" uid="uid://cdsk6dp6xvw80" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Theme" uid="uid://dgqe6pc8hyjg7" path="res://main_menu.tres" id="1_oa1go"]
 [ext_resource type="FontFile" uid="uid://cicw1ru1oftxc" path="res://assets/fonts/monogram.ttf" id="3_bqqt6"]
 [ext_resource type="VideoStream" uid="uid://ccfg6pvqi2pq0" path="res://assets/backgrounds/pixel-lofi-city.ogv" id="3_oa1go"]
 [ext_resource type="Texture2D" uid="uid://44pcdyeidjeu" path="res://assets/backgrounds/close.png" id="4_wu84c"]
 [ext_resource type="FontFile" uid="uid://bqtebpxmpm6ps" path="res://assets/fonts/Kaph-Regular.ttf" id="5_8ln24"]
 [ext_resource type="Script" uid="uid://bs74xfy038srs" path="res://scripts/audio_control.gd" id="7_oa1go"]
-
-[sub_resource type="Theme" id="Theme_rtw2f"]
-default_font = ExtResource("3_bqqt6")
-default_font_size = 32
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -18,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_rtw2f")
+theme = ExtResource("1_oa1go")
 script = ExtResource("1_ekxnf")
 
 [node name="AnimatedBackground" type="VideoStreamPlayer" parent="."]

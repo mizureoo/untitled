@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcabwjmsdhvo0"]
+
+[ext_resource type="Theme" uid="uid://dgqe6pc8hyjg7" path="res://main_menu.tres" id="1_xeevv"]
+[ext_resource type="Script" uid="uid://6f01wuenbkod" path="res://scripts/game_over.gd" id="2_wqhvx"]
+
+[node name="Game Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xeevv")
+script = ExtResource("2_wqhvx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Game Over" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -221.0
+offset_right = 185.0
+offset_bottom = -191.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 62
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="StatsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -125.0
+offset_right = 185.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = 163.0
+offset_right = 91.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Retry" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = " Retry "
+
+[node name="Quit" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = " Quit "
