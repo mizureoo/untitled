@@ -2885,6 +2885,13 @@ sources/2 = SubResource("TileSetAtlasSource_31oqk")
 
 [node name="Level 2" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("23_8ghkn")]
+visible = false
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("24_5ar51")]
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -2941,13 +2948,6 @@ editor_draw_limits = true
 
 [node name="SpawnPoint" type="Node2D" parent="."]
 position = Vector2(108, 409)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("23_8ghkn")]
-visible = false
-
-[node name="HUD" parent="CanvasLayer" instance=ExtResource("24_5ar51")]
 
 [node name="Collectibles" type="Node" parent="."]
 
