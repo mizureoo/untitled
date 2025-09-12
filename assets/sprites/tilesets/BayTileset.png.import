@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjcgrismo10pb"
-path="res://.godot/imported/2.png-3047c462d3c37565c285d3ed16b6a6fd.ctex"
+uid="uid://c6bvqtvhjftoj"
+path="res://.godot/imported/BayTileset.png-da88e3bbce5ccf3302e59b7337684208.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/Day/2.png"
-dest_files=["res://.godot/imported/2.png-3047c462d3c37565c285d3ed16b6a6fd.ctex"]
+source_file="res://assets/sprites/tilesets/BayTileset.png"
+dest_files=["res://.godot/imported/BayTileset.png-da88e3bbce5ccf3302e59b7337684208.ctex"]
 
 [params]
 

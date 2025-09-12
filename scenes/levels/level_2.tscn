@@ -1,9 +1,10 @@
-[gd_scene load_steps=31 format=4 uid="uid://c25hgtc453rrb"]
+[gd_scene load_steps=32 format=4 uid="uid://c25hgtc453rrb"]
 
 [ext_resource type="Texture2D" uid="uid://vmy3dofdrwkr" path="res://assets/backgrounds/Night/1.png" id="2_mx6s3"]
-[ext_resource type="Texture2D" uid="uid://bcdedaj3qvlks" path="res://assets/backgrounds/Night/2.png" id="3_7d3nu"]
-[ext_resource type="Texture2D" uid="uid://dm702ctfh1nux" path="res://assets/backgrounds/Night/3.png" id="4_r6ket"]
+[ext_resource type="Texture2D" uid="uid://dqo4rocvqsl8u" path="res://assets/backgrounds/Night 1/2.png" id="4_sibr7"]
+[ext_resource type="Texture2D" uid="uid://b574rdcjqnrq7" path="res://assets/backgrounds/Night 1/3.png" id="5_lkn2k"]
 [ext_resource type="Texture2D" uid="uid://qxtm0da0gxq0" path="res://assets/sprites/tilesets/ExclusionTileset.png" id="5_xworo"]
+[ext_resource type="Texture2D" uid="uid://cm5rjk6swg472" path="res://assets/backgrounds/Night 1/5.png" id="6_sbygb"]
 [ext_resource type="Texture2D" uid="uid://cak08ecl6l8oc" path="res://assets/sprites/tilesets/PowerStationTileset.png" id="6_wwjag"]
 [ext_resource type="Texture2D" uid="uid://ddv0le5heqjr8" path="res://assets/sprites/Objectsss.png" id="7_rvwo1"]
 [ext_resource type="Texture2D" uid="uid://bthgekybrs6tt" path="res://assets/sprites/Sprite-0001-Sheet.png" id="8_yxkvy"]
@@ -3457,7 +3458,7 @@ motion_mirroring = Vector2(1152, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(576, 223)
 scale = Vector2(2, 1.38889)
-texture = ExtResource("3_7d3nu")
+texture = ExtResource("4_sibr7")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.3, 1)
@@ -3466,7 +3467,16 @@ motion_mirroring = Vector2(1152, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(576, 224)
 scale = Vector2(2, 1.38889)
-texture = ExtResource("4_r6ket")
+texture = ExtResource("5_lkn2k")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(576, 224)
+scale = Vector2(2, 1.38889)
+texture = ExtResource("6_sbygb")
 
 [node name="Foreground" type="TileMapLayer" parent="."]
 position = Vector2(0, 439)
@@ -3518,4 +3528,4 @@ position = Vector2(-62, 549)
 shape = SubResource("WorldBoundaryShape2D_7nomh")
 
 [node name="Slime" parent="." instance=ExtResource("19_p4se4")]
-position = Vector2(1070, 286)
+position = Vector2(1070, 290)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwleooh7ellxj"
-path="res://.godot/imported/4.png-71aafd1151ed8897015af8554fcbf54d.ctex"
+uid="uid://n1udfjtad2ad"
+path="res://.godot/imported/spritesheet.png-e59fb27ccb10e190dd32230f533c627f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/Day/4.png"
-dest_files=["res://.godot/imported/4.png-71aafd1151ed8897015af8554fcbf54d.ctex"]
+source_file="res://assets/sprites/tilesets/spritesheet.png"
+dest_files=["res://.godot/imported/spritesheet.png-e59fb27ccb10e190dd32230f533c627f.ctex"]
 
 [params]
 
