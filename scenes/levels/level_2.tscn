@@ -3527,7 +3527,7 @@ tile_map_data = PackedByteArray("AABuAPb/AgAOABQAABBtAPb/AgAPABQAABBsAPb/AgAQABQ
 tile_set = SubResource("TileSet_fc0e3")
 
 [node name="AreaExit" parent="." instance=ExtResource("21_0y23r")]
-position = Vector2(2182, 419)
+position = Vector2(2244, 419)
 
 [node name="Player" parent="." instance=ExtResource("22_wrgna")]
 position = Vector2(108, 439)
