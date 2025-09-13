@@ -55,13 +55,13 @@ func _on_reset_pressed() -> void:
 	# Apply to audio buses
 	_apply_audio_settings()
 
-func _on_music_slider_value_changed(value: float) -> void:
-	Settings.music_volume = value
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(value))
+func _on_music_slider_value_changed(_value: float) -> void:
+	Settings.music_volume = _value
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(_value))
 
-func _on_sfx_slider_value_changed(value: float) -> void:
-	Settings.sfx_volume = value
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(value))
+func _on_sfx_slider_value_changed(_value: float) -> void:
+	Settings.sfx_volume = _value
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(_value))
 
 func _on_mute_button_toggled(toggled_on: bool) -> void:
 	Settings.mute = toggled_on

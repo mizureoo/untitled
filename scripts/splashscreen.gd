@@ -6,7 +6,7 @@ var main_menu_scene: Control = null
 
 func _ready():
 	# Play the AnimationPlayer sequence for logos
-	animation_player.play("fade")
+	animation_player.play("fade_out")
 	animation_player.animation_finished.connect(_on_logos_finished)
 
 func _on_logos_finished(_anim_name):
