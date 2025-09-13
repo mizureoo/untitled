@@ -9,7 +9,7 @@ func _ready():
 	animation_player.play("fade")
 	animation_player.animation_finished.connect(_on_logos_finished)
 
-func _on_logos_finished(anim_name):
+func _on_logos_finished(_anim_name):
 	# Instance the MainMenu now
 	main_menu_scene = preload("res://scenes/main_menu.tscn").instantiate()
 	add_child(main_menu_scene)
