@@ -98,6 +98,21 @@ offset_right = 800.0
 offset_bottom = 592.0
 mouse_filter = 1
 
+[node name="ResetButton" type="Button" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -106.0
+offset_top = -69.0
+offset_right = 106.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Reset to Defaults"
+
 [node name="Return" type="Button" parent="SettingsPanel"]
 layout_mode = 0
 offset_left = 413.0
@@ -185,21 +200,6 @@ horizontal_alignment = 1
 [node name="MuteButton" type="CheckButton" parent="SettingsPanel/Volume/Mute All"]
 layout_mode = 2
 
-[node name="ResetButton" type="Button" parent="SettingsPanel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -106.0
-offset_top = -69.0
-offset_right = 106.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Reset to Defaults"
-
 [node name="CreditsPanel" type="Panel" parent="."]
 visible = false
 layout_mode = 0
@@ -283,9 +283,9 @@ horizontal_alignment = 1
 [connection signal="pressed" from="ButtonContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="ButtonContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="ButtonContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="SettingsPanel/ResetButton" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="SettingsPanel/Return" to="." method="_ready"]
 [connection signal="value_changed" from="SettingsPanel/Volume/Music Volume/MusicSlider" to="SettingsPanel/Volume/Music Volume/MusicSlider" method="_on_value_changed"]
 [connection signal="value_changed" from="SettingsPanel/Volume/SFX Volume/SFXSlider" to="SettingsPanel/Volume/SFX Volume/SFXSlider" method="_on_value_changed"]
 [connection signal="toggled" from="SettingsPanel/Volume/Mute All/MuteButton" to="." method="_on_mute_button_toggled"]
-[connection signal="pressed" from="SettingsPanel/ResetButton" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="CreditsPanel/Return" to="." method="_ready"]

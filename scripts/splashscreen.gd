@@ -2,21 +2,19 @@ extends Control
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var overlay: ColorRect = $ColorRect
-@onready var main_menu_scene = preload("res://scenes/main_menu.tscn").instantiate()
+var main_menu_scene: Control = null
 
 func _ready():
-	# Load main menu behind overlay
-	add_child(main_menu_scene)
-	main_menu_scene.z_index = -1
-	main_menu_scene.visible = false
-
 	# Play the AnimationPlayer sequence for logos
-	animation_player.play("splash_fade")
+	animation_player.play("fade")
 	animation_player.animation_finished.connect(_on_logos_finished)
 
 func _on_logos_finished(anim_name):
-	# Show main menu under overlay
-	main_menu_scene.visible = true
+	# Instance the MainMenu now
+	main_menu_scene = preload("res://scenes/main_menu.tscn").instantiate()
+	add_child(main_menu_scene)
+	main_menu_scene.z_index = -1
+	main_menu_scene.visible = true  # show it under overlay
 
 	# Tween overlay to fade out smoothly
 	var tween = get_tree().create_tween()

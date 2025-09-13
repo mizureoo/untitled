@@ -7,15 +7,12 @@ extends Control
 @onready var music_slider: HSlider = $"SettingsPanel/Volume/Music Volume/MusicSlider"
 @onready var sfx_slider: HSlider = $"SettingsPanel/Volume/SFX Volume/SFXSlider"
 @onready var mute_button: CheckButton = $"SettingsPanel/Volume/Mute All/MuteButton"
-@onready var reset_button: Button = $SettingsPanel/Reset
+@onready var reset_button: Button = $SettingsPanel/ResetButton
 
 func _ready() -> void:
 	button_container.visible = true
 	settings_panel.visible = false
 	credits_panel.visible = false
-	mute_button.toggled.connect(_on_mute_button_toggled)
-	music_slider.value_changed.connect(_on_music_slider_value_changed)
-	sfx_slider.value_changed.connect(_on_sfx_slider_value_changed)
 
 	# Load values from Settings (autoload)
 	music_slider.value = Settings.music_volume
@@ -46,8 +43,8 @@ func _on_quit_pressed() -> void:
 
 func _on_reset_pressed() -> void:
 	# Reset values in Settings
-	Settings.music_volume = 0.5
-	Settings.sfx_volume = 0.5
+	Settings.music_volume = 0.3
+	Settings.sfx_volume = 0.3
 	Settings.mute = false
 
 	# Update UI
