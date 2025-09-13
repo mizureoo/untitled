@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://c25hgtc453rrb"]
+[gd_scene load_steps=35 format=4 uid="uid://c25hgtc453rrb"]
 
 [ext_resource type="Theme" uid="uid://dgqe6pc8hyjg7" path="res://main_menu.tres" id="2_lkn2k"]
 [ext_resource type="Texture2D" uid="uid://vmy3dofdrwkr" path="res://assets/backgrounds/Night 1/1.png" id="2_mx6s3"]
@@ -3460,6 +3460,9 @@ sources/2 = SubResource("TileSetAtlasSource_31oqk")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lkn2k"]
 normal = Vector2(1, 0)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sbygb"]
+normal = Vector2(-1, 0)
+
 [node name="Level 2" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -3582,3 +3585,7 @@ position = Vector2(1356, -259)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_lkn2k")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2305, 0)
+shape = SubResource("WorldBoundaryShape2D_sbygb")
