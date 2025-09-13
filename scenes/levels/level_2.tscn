@@ -1,5 +1,6 @@
-[gd_scene load_steps=32 format=4 uid="uid://c25hgtc453rrb"]
+[gd_scene load_steps=33 format=4 uid="uid://c25hgtc453rrb"]
 
+[ext_resource type="Theme" uid="uid://dgqe6pc8hyjg7" path="res://main_menu.tres" id="2_lkn2k"]
 [ext_resource type="Texture2D" uid="uid://vmy3dofdrwkr" path="res://assets/backgrounds/Night/1.png" id="2_mx6s3"]
 [ext_resource type="Texture2D" uid="uid://dqo4rocvqsl8u" path="res://assets/backgrounds/Night 1/2.png" id="4_sibr7"]
 [ext_resource type="Texture2D" uid="uid://b574rdcjqnrq7" path="res://assets/backgrounds/Night 1/3.png" id="5_lkn2k"]
@@ -3461,6 +3462,18 @@ sources/2 = SubResource("TileSetAtlasSource_31oqk")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("24_5ar51")]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -404.0
+offset_top = 19.0
+offset_right = -20.0
+offset_bottom = 45.0
+grow_horizontal = 0
+theme = ExtResource("2_lkn2k")
+text = "Look out for slimes roaming around the city."
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("23_8ghkn")]
 visible = false
