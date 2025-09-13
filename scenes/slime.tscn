@@ -41,7 +41,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0l8pv"]
-size = Vector2(17, 9)
+size = Vector2(17, 10)
 
 [node name="Slime" type="Node2D"]
 script = ExtResource("1_n6pvg")
@@ -55,6 +55,7 @@ autoplay = "walk"
 [node name="Killzone" parent="." instance=ExtResource("2_n6pvg")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_0l8pv")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]

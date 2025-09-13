@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Untitled"
-run/main_scene="uid://d1ssirq17kt27"
+config/name="Midnight Munch"
+run/main_scene="uid://bhgjn7tbyiglm"
 config/features=PackedStringArray("4.4", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false

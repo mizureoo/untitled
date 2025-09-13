@@ -1,7 +1,8 @@
 extends Control
 
 @onready var stats_label: Label = $StatsLabel
-@onready var quit_button: Button = $Quit
+@onready var quit_button: Button = $HBoxContainer/Quit
+@onready var return_button: Button = $HBoxContainer/Return
 
 func _ready():
 	var text = "Congratulations! You completed the game!\n\n"
@@ -15,3 +16,7 @@ func _ready():
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+func _on_return_pressed() -> void:
+		GameManager.reset()  # reset score, health, level, stats
+		SceneManager.change_scene("res://scenes/main_menu.tscn")
