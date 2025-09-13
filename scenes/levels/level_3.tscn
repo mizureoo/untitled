@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://bd076a0l8r3ve"]
+[gd_scene load_steps=43 format=4 uid="uid://bd076a0l8r3ve"]
 
 [ext_resource type="PackedScene" uid="uid://c2spgk05it1ui" path="res://scenes/pause_menu.tscn" id="1_5f5xw"]
 [ext_resource type="PackedScene" uid="uid://ccugcsqtogyx5" path="res://scenes/hud.tscn" id="2_o3ttr"]
@@ -5762,6 +5762,12 @@ sources/12 = SubResource("TileSetAtlasSource_kdsi4")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7nomh"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jql0x"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_do6pa"]
+normal = Vector2(-1, 0)
+
 [node name="Level 3" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -5883,3 +5889,12 @@ position = Vector2(924, -250)
 
 [node name="Slime3" parent="Killzone" instance=ExtResource("23_kdsi4")]
 position = Vector2(1052, -114)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_jql0x")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2305, 0)
+shape = SubResource("WorldBoundaryShape2D_do6pa")
