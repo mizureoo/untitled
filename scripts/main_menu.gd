@@ -24,7 +24,7 @@ func _apply_audio_settings() -> void:
 func _load_settings_to_ui():
 	music_slider.value = Settings.music_volume
 	sfx_slider.value = Settings.sfx_volume
-	mute_button.button_pressed = Settings.mute  # Use button_pressed instead of pressed
+	mute_button.button_pressed = Settings.mute  
 	_apply_audio_settings()
 
 # --- Button callbacks ---
@@ -34,7 +34,7 @@ func _on_play_pressed() -> void:
 func _on_settings_pressed() -> void:
 	button_container.visible = false
 	settings_panel.visible = true
-	_load_settings_to_ui()  # Only load when entering settings
+	_load_settings_to_ui()
 
 func _on_credits_pressed() -> void:
 	button_container.visible = false
@@ -53,7 +53,6 @@ func _on_reset_pressed() -> void:
 func _on_back_from_settings() -> void:
 	settings_panel.visible = false
 	button_container.visible = true
-	# Keep the current slider values as they are, do not overwrite unless you want to reset
 
 # --- Slider / Toggle callbacks ---
 func _on_music_slider_value_changed(value: float) -> void:
