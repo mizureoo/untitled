@@ -2,12 +2,26 @@ extends Node
 
 var score: int = 0
 var level: int = 1
-var total_levels: int = 2
+var total_levels: int = 0
 var player_health: int = 3
 
-# Store stats for each level: score and deaths
 var level_stats := []  # each item: {"level": int, "score": int, "deaths": int}
 var current_level_deaths: int = 0
+
+
+func _ready():
+	# Count levels dynamically at startup
+	_scan_levels()
+
+
+func _scan_levels():
+	var dir = DirAccess.open("res://scenes/levels")
+	if dir:
+		for file_name in dir.get_files():
+			if file_name.begins_with("level_") and file_name.ends_with(".tscn"):
+				total_levels += 1
+	print("Detected total levels:", total_levels)
+
 
 func add_score(amount: int = 1):
 	score += amount
@@ -28,7 +42,6 @@ func start_level(level_number: int):
 	current_level_deaths = 0
 
 func end_level():
-	# Save stats for this level
 	level_stats.append({
 		"level": level,
 		"score": score,

@@ -48,8 +48,7 @@ theme_override_constants/shadow_offset_x = 11
 theme_override_fonts/font = ExtResource("5_8ln24")
 theme_override_font_sizes/font_size = 70
 text = "Midnight
-Munch
-(placeholder)"
+Munch"
 horizontal_alignment = 1
 
 [node name="ButtonContainer" type="VBoxContainer" parent="."]

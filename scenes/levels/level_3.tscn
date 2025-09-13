@@ -5771,14 +5771,14 @@ sources/12 = SubResource("TileSetAtlasSource_kdsi4")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7nomh"]
 
-[node name="Level 2" type="Node2D"]
+[node name="Level 3" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("2_o3ttr")]
+
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_5f5xw")]
 visible = false
-
-[node name="HUD" parent="CanvasLayer" instance=ExtResource("2_o3ttr")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -5862,8 +5862,8 @@ position = Vector2(-62, 549)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_7nomh")
 
-[node name="Slime" parent="." instance=ExtResource("23_kdsi4")]
-position = Vector2(308, 304)
+[node name="Slime" parent="Killzone" instance=ExtResource("23_kdsi4")]
+position = Vector2(370, -245)
 
-[node name="Slime2" parent="." instance=ExtResource("23_kdsi4")]
-position = Vector2(862, 296)
+[node name="Slime2" parent="Killzone" instance=ExtResource("23_kdsi4")]
+position = Vector2(924, -253)
