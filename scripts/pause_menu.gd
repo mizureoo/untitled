@@ -23,6 +23,7 @@ func _on_resume_pressed() -> void:
 	
 func _on_return_pressed() -> void:
 	get_tree().paused = false 
+	GameManager.reset()
 	SceneManager.change_scene("res://scenes/main_menu.tscn")
 
 func _on_back_pressed() -> void:
