@@ -22,9 +22,14 @@ func _on_resume_pressed() -> void:
 	_is_paused = false
 	
 func _on_return_pressed() -> void:
-	get_tree().paused = false 
-	GameManager.reset()
+	get_tree().paused = false
 	SceneManager.change_scene("res://scenes/main_menu.tscn")
+
+func _on_save_game_pressed() -> void:
+	SaveManager.data["current_level"] = GameManager.level
+	SaveManager.data["score"] = GameManager.score
+	SaveManager.data["player_health"] = GameManager.player_health
+	SaveManager.save_game()
 
 func _on_back_pressed() -> void:
 	grid_container.visible = true

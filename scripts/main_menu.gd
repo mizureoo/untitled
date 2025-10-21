@@ -11,10 +11,39 @@ extends Control
 @onready var reset_button: Button = $SettingsPanel/ResetButton
 @onready var back_button: Button = $SettingsPanel/Return
 
+@onready var new_game_button = $ButtonContainer/NewGame
+@onready var continue_button = $ButtonContainer/Continue
+
 func _ready():
 	button_container.visible = true
 	settings_panel.visible = false
 	credits_panel.visible = false
+	
+	# Show Continue only if save file exists
+	continue_button.visible = SaveManager.has_save()
+
+func _on_new_game_pressed():
+		# Reset all in-game stats
+	GameManager.reset()
+
+	# Overwrite any existing save with fresh data
+	SaveManager.data = {
+		"current_level": 1,
+		"player_health": 3,
+		"score": 0
+	}
+	SaveManager.save_game()
+
+	# Load Level 1
+	SceneManager.change_scene("res://scenes/levels/level_1.tscn")
+
+func _on_continue_pressed():
+	if SaveManager.has_save():
+		SaveManager.load_game()
+		SaveManager.apply_to_game()  # <- apply loaded data to GameManager
+		
+		var level = SaveManager.data.get("current_level", 1)
+		SceneManager.change_scene("res://scenes/levels/level_%d.tscn" % level)
 
 func _apply_audio_settings() -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(Settings.music_volume))
@@ -28,9 +57,6 @@ func _load_settings_to_ui():
 	_apply_audio_settings()
 
 # --- Button callbacks ---
-func _on_play_pressed() -> void:
-	SceneManager.change_scene("res://scenes/levels/level_1.tscn")
-
 func _on_settings_pressed() -> void:
 	button_container.visible = false
 	settings_panel.visible = true
@@ -44,7 +70,6 @@ func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_reset_pressed() -> void:
-	# Reset Settings to defaults
 	Settings.music_volume = 0.3
 	Settings.sfx_volume = 0.3
 	Settings.mute = false

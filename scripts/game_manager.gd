@@ -5,6 +5,7 @@ var score: int = 0
 var level: int = 1
 var total_levels: int = 3  # Hardcoded total levels
 var player_health: int = 3
+var collected_food = []
 
 # Stats per level
 var level_stats := []  # each item: {"level": int, "score": int, "deaths": int}

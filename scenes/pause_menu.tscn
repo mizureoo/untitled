@@ -54,9 +54,14 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Resume"
 
+[node name="SaveGame" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Save Game"
+
 [node name="ReturnToMenu" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = " Return to Main Menu "
 
 [connection signal="pressed" from="GridContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="GridContainer/SaveGame" to="." method="_on_save_game_pressed"]
 [connection signal="pressed" from="GridContainer/ReturnToMenu" to="." method="_on_return_pressed"]
