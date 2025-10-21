@@ -24,7 +24,7 @@ func _ready():
 
 func _on_new_game_pressed():
 		# Reset all in-game stats
-	GameManager.reset()
+	GameManager.reset(true)
 
 	# Overwrite any existing save with fresh data
 	SaveManager.data = {
