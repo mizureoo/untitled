@@ -1,7 +1,27 @@
-[gd_scene load_steps=31 format=3 uid="uid://dk1qpgufp2lkx"]
+[gd_scene load_steps=36 format=3 uid="uid://dk1qpgufp2lkx"]
 
 [ext_resource type="Texture2D" uid="uid://160xuhhlqqja" path="res://assets/sprites/player & enemy/Tiny Alchemist Sprite Sheet 48x32.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bcx4emqlh7wsw" path="res://scripts/player.gd" id="1_g2els"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a38lo"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(0, 512, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ni07"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(48, 512, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l71n6"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(96, 512, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke2ow"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(144, 512, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujl30"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(192, 512, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("1_3vyb7")
@@ -111,6 +131,26 @@ region = Rect2(336, 160, 48, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_a38lo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ni07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l71n6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke2ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujl30")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_onrkg")
 }, {
 "duration": 1.0,
@@ -213,9 +253,8 @@ script = ExtResource("1_g2els")
 position = Vector2(-2, -19)
 scale = Vector2(1.21875, 1.21875)
 sprite_frames = SubResource("SpriteFrames_dw050")
-animation = &"jump"
+animation = &"death"
 autoplay = "idle"
-frame_progress = 0.634359
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
