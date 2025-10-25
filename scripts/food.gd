@@ -7,27 +7,28 @@ func _ready():
 	if food_id == "":
 		food_id = _generate_auto_id()
 
-	# Ensure the save dictionary has a "collected_food" list
+	# Ensure SaveManager has a "collected_food" list
 	if not SaveManager.data.has("collected_food"):
 		SaveManager.data["collected_food"] = []
 
-	# Hide/remove this food if it’s already collected
+	# Hide this food if it's already collected in save
 	if food_id in SaveManager.data["collected_food"]:
 		queue_free()
 
-func _on_body_entered(body: Node2D):
+func _on_body_entered(body: Node2D) -> void:
 	if body is PlayerController:
 		GameManager.add_score()
+		GameManager.collect_food(food_id)  # store in GameManager runtime list
 
-		# Add this food to the collected list (only once)
+		# Update SaveManager's runtime data only, not file
 		if not food_id in SaveManager.data["collected_food"]:
 			SaveManager.data["collected_food"].append(food_id)
-			SaveManager.save_game()
 
+		# Don’t save to disk automatically — only manual saves should
 		queue_free()
 
 func _generate_auto_id() -> String:
-	# Use scene name + position to create a unique ID per level
+	# Generate unique ID based on level and position
 	var scene_name = get_tree().current_scene.name if get_tree().current_scene else "unknown_scene"
 	var pos_hash = str(global_position.x) + "_" + str(global_position.y)
 	return scene_name + "_" + pos_hash

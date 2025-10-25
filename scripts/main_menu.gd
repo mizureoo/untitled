@@ -23,25 +23,14 @@ func _ready():
 	continue_button.visible = SaveManager.has_save()
 
 func _on_new_game_pressed():
-		# Reset all in-game stats
 	GameManager.reset(true)
-
-	# Overwrite any existing save with fresh data
-	SaveManager.data = {
-		"current_level": 1,
-		"player_health": 3,
-		"score": 0
-	}
-	SaveManager.save_game()
-
-	# Load Level 1
+	SaveManager.reset_save()  # delete any existing save
 	SceneManager.change_scene("res://scenes/levels/level_1.tscn")
-
+	
 func _on_continue_pressed():
 	if SaveManager.has_save():
 		SaveManager.load_game()
-		SaveManager.apply_to_game()  # <- apply loaded data to GameManager
-		
+		SaveManager.apply_to_game()
 		var level = SaveManager.data.get("current_level", 1)
 		SceneManager.change_scene("res://scenes/levels/level_%d.tscn" % level)
 
