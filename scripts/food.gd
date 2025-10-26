@@ -28,7 +28,6 @@ func _on_body_entered(body: Node2D) -> void:
 		queue_free()
 
 func _generate_auto_id() -> String:
-	# Generate unique ID based on level and position
-	var scene_name = get_tree().current_scene.name if get_tree().current_scene else "unknown_scene"
+	var scene_name = str(get_tree().current_scene.name) if get_tree().current_scene else "unknown_scene"
 	var pos_hash = str(global_position.x) + "_" + str(global_position.y)
 	return scene_name + "_" + pos_hash
