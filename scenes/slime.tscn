@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dwpbjpfuamje8"]
+[gd_scene load_steps=18 format=3 uid="uid://dwpbjpfuamje8"]
 
 [ext_resource type="Script" uid="uid://divougqf0ofpw" path="res://scripts/slime.gd" id="1_n6pvg"]
 [ext_resource type="Texture2D" uid="uid://b6x56vkhw3o4u" path="res://assets/sprites/player & enemy/slime-Sheet.png" id="1_p2gj0"]
@@ -62,6 +62,11 @@ animations = [{
 "name": &"death",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gstla")
@@ -80,27 +85,44 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0l8pv"]
-size = Vector2(17, 10)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjw23"]
+size = Vector2(20, 10)
 
-[node name="Slime" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6pvg"]
+size = Vector2(24, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2gj0"]
+size = Vector2(17, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2npkn"]
+size = Vector2(32, 10)
+
+[node name="Slime" type="CharacterBody2D"]
 script = ExtResource("1_n6pvg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_v5wyi")
-animation = &"death"
+animation = &"walk"
 autoplay = "walk"
-frame_progress = 0.23256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pjw23")
 
 [node name="Killzone" parent="." instance=ExtResource("2_n6pvg")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_0l8pv")
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_n6pvg")
 
-[node name="RayCastRight" type="RayCast2D" parent="."]
-target_position = Vector2(14, 0)
+[node name="StompZone" type="Area2D" parent="."]
+collision_mask = 2
 
-[node name="RayCastLeft" type="RayCast2D" parent="."]
-target_position = Vector2(-13, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompZone"]
+position = Vector2(-0.5, -5)
+shape = SubResource("RectangleShape2D_p2gj0")
+
+[node name="DetectionZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone"]
+shape = SubResource("RectangleShape2D_2npkn")

@@ -10,27 +10,27 @@ var is_dead: bool = false
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
-		return  # Skip movement/controls when dead
+		return  # Stop movement if dead
 
-	# Gravity
+	# --- Gravity ---
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
 
-	# Jump
+	# --- Jump ---
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Horizontal movement
+	# --- Horizontal movement ---
 	var direction := Input.get_axis("move_left", "move_right")
 	velocity.x = direction * SPEED
 
-	# Flip sprite
+	# --- Sprite flip ---
 	if direction > 0:
 		animated_sprite.flip_h = false
 	elif direction < 0:
 		animated_sprite.flip_h = true
 
-	# Animations
+	# --- Animations ---
 	if is_on_floor():
 		if direction == 0:
 			animated_sprite.play("idle")
@@ -41,16 +41,22 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+# --- Called by enemy KillZone ---
 func die():
 	if is_dead:
 		return
 	is_dead = true
 	GameManager.lose_life()
-	animated_sprite.play("death")  # make sure "death" exists in your AnimatedSprite2D
 
-	# Fade out effect
+	animated_sprite.play("death")  # Ensure “death” animation exists
+
+	# Fade-out tween
 	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", 0.0, 0.8)  # fade to transparent in 0.8s
+	tween.tween_property(self, "modulate:a", 0.0, 0.8)
 
 	set_process(false)
 	set_physics_process(false)
+
+# --- Called by enemy StompZone when jumping on enemy ---
+func bounce():
+	velocity.y = JUMP_VELOCITY / 0.8
