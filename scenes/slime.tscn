@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dwpbjpfuamje8"]
+[gd_scene load_steps=29 format=3 uid="uid://dwpbjpfuamje8"]
 
 [ext_resource type="Script" uid="uid://divougqf0ofpw" path="res://scripts/slime.gd" id="1_n6pvg"]
 [ext_resource type="Texture2D" uid="uid://b6x56vkhw3o4u" path="res://assets/sprites/player & enemy/slime-Sheet.png" id="1_p2gj0"]
@@ -55,6 +55,18 @@ region = Rect2(96, 50, 32, 25)
 [sub_resource type="AtlasTexture" id="AtlasTexture_2xjuo"]
 atlas = ExtResource("1_p2gj0")
 region = Rect2(128, 50, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35t6e"]
+atlas = ExtResource("1_p2gj0")
+region = Rect2(0, 0, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbccl"]
+atlas = ExtResource("1_p2gj0")
+region = Rect2(32, 0, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8bnk"]
+atlas = ExtResource("1_p2gj0")
+region = Rect2(96, 0, 32, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gstla"]
 atlas = ExtResource("1_p2gj0")
@@ -125,6 +137,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_35t6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbccl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8bnk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_gstla")
 }, {
 "duration": 1.0,
@@ -159,9 +185,9 @@ script = ExtResource("1_n6pvg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_v5wyi")
-animation = &"chase"
+animation = &"idle"
 autoplay = "walk"
-frame_progress = 0.488278
+frame_progress = 0.778377
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pjw23")

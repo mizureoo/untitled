@@ -59,4 +59,4 @@ func die():
 
 # --- Called by enemy StompZone when jumping on enemy ---
 func bounce():
-	velocity.y = JUMP_VELOCITY / 0.8
+	velocity.y = JUMP_VELOCITY / 1
