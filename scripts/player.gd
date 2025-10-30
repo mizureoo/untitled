@@ -50,6 +50,9 @@ func die():
 
 	animated_sprite.play("death")  # Ensure “death” animation exists
 
+	if $DeathSound and $DeathSound.stream:
+		$DeathSound.play()
+
 	# Fade-out tween
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 0.0, 0.8)

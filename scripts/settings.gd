@@ -1,7 +1,7 @@
 extends Node
 
 var music_volume: float = 0.3
-var sfx_volume: float = 0.3
+var sfx_volume: float = 0.1
 var mute: bool = false
 
 const SETTINGS_FILE := "user://settings.save"

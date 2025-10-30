@@ -41,7 +41,6 @@ func _on_continue_pressed():
 		var level = SaveManager.data.get("current_level", 1)
 		SceneManager.change_scene("res://scenes/levels/level_%d.tscn" % level)
 
-
 # --- Audio ---
 func _apply_audio_settings():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(Settings.music_volume))
@@ -59,7 +58,6 @@ func _load_settings_to_ui():
 
 	_apply_audio_settings()
 
-
 # --- Button callbacks ---
 func _on_settings_pressed():
 	button_container.visible = false
@@ -74,7 +72,7 @@ func _on_quit_pressed():
 
 func _on_reset_pressed():
 	Settings.music_volume = 0.3
-	Settings.sfx_volume = 0.3
+	Settings.sfx_volume = 0.1
 	Settings.mute = false
 	_apply_audio_settings()
 	Settings.save_settings()
@@ -84,7 +82,6 @@ func _on_back_from_settings():
 	settings_panel.visible = false
 	button_container.visible = true
 	Settings.save_settings()
-
 
 # --- Slider / Toggle callbacks ---
 func _on_music_slider_value_changed(value: float):
@@ -107,7 +104,6 @@ func _on_mute_button_toggled(toggled_on: bool):
 	Settings.mute = toggled_on
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), toggled_on)
 	Settings.save_settings()
-
 
 func _on_settings_panel_visibility_changed() -> void:
 	if settings_panel.visible:

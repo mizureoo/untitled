@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://xsaqjawsei74"]
+[gd_scene load_steps=12 format=3 uid="uid://xsaqjawsei74"]
 
 [ext_resource type="Script" uid="uid://vk8widfuxulj" path="res://scripts/food.gd" id="1_af40f"]
 [ext_resource type="Texture2D" uid="uid://b0820fvr6a8x2" path="res://assets/sprites/pizza animated.png" id="2_af40f"]
+[ext_resource type="AudioStream" uid="uid://c01cof4fhqxkj" path="res://assets/music/collect.wav" id="3_370ap"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_370ap"]
 atlas = ExtResource("2_af40f")
@@ -66,5 +67,9 @@ frame_progress = 0.00557209
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_14bb5")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_370ap")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

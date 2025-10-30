@@ -24,7 +24,10 @@ func _on_body_entered(body: Node2D) -> void:
 		if not food_id in SaveManager.data["collected_food"]:
 			SaveManager.data["collected_food"].append(food_id)
 
-		# Don’t save to disk automatically — only manual saves should
+
+		# Play the pickup sound
+		$PickupSound.play()
+		await get_tree().create_timer(0.17).timeout
 		queue_free()
 
 func _generate_auto_id() -> String:

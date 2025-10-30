@@ -25,6 +25,11 @@ Settings="*res://scripts/settings.gd"
 GameManager="*res://scripts/game_manager.gd"
 SaveManager="*res://scripts/save_manager.gd"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="viewport"
+
 [input]
 
 jump={
