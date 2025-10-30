@@ -62,6 +62,24 @@ text = "Save Game"
 layout_mode = 2
 text = " Return to Main Menu "
 
+[node name="SaveConfirmDialog" type="ConfirmationDialog" parent="."]
+title = "Save Game"
+initial_position = 1
+size = Vector2i(424, 100)
+ok_button_text = "YES"
+dialog_text = "Do you want to save your progress?"
+dialog_autowrap = true
+cancel_button_text = "NO"
+
+[node name="ExitConfirmDialog" type="ConfirmationDialog" parent="."]
+title = "Exit to Main Menu"
+initial_position = 1
+size = Vector2i(592, 100)
+ok_button_text = "YES"
+dialog_text = "Progress will be lost if not saved. Exit anyway?"
+dialog_autowrap = true
+cancel_button_text = "CANCEL"
+
 [connection signal="pressed" from="GridContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="GridContainer/SaveGame" to="." method="_on_save_game_pressed"]
 [connection signal="pressed" from="GridContainer/ReturnToMenu" to="." method="_on_return_pressed"]
