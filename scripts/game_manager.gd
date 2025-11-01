@@ -7,7 +7,7 @@ signal health_changed(new_health)
 # --- Variables ---
 var score: int = 0
 var level: int = 1
-var total_levels: int = 4
+var total_levels: int = 5
 var player_health: int = 3
 var max_health: int = 5
 
