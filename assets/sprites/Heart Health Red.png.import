@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pemo08kf6apt"
-path="res://.godot/imported/bb.png-e6a260e67603f048eb062e1ecdcbfebf.ctex"
+uid="uid://djr5ku5lknaou"
+path="res://.godot/imported/Heart Health Red.png-6ca097ba44751f4c00b0dc9cd5c43782.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/bb.png"
-dest_files=["res://.godot/imported/bb.png-e6a260e67603f048eb062e1ecdcbfebf.ctex"]
+source_file="res://assets/sprites/Heart Health Red.png"
+dest_files=["res://.godot/imported/Heart Health Red.png-6ca097ba44751f4c00b0dc9cd5c43782.ctex"]
 
 [params]
 

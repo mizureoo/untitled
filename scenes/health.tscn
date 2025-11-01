@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://rv2xrj68bhmn"]
+
+[ext_resource type="Script" uid="uid://na3hk2d1usv4" path="res://scripts/health.gd" id="1_5e2k1"]
+[ext_resource type="Texture2D" uid="uid://djr5ku5lknaou" path="res://assets/sprites/Heart Health Red.png" id="2_2rad1"]
+[ext_resource type="AudioStream" uid="uid://uj7mptdl2mv5" path="res://assets/music/heal.wav" id="3_58c75"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58c75"]
+atlas = ExtResource("2_2rad1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_but5r"]
+atlas = ExtResource("2_2rad1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r330t"]
+atlas = ExtResource("2_2rad1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcdjo"]
+atlas = ExtResource("2_2rad1")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p278q"]
+atlas = ExtResource("2_2rad1")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ukqru"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58c75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_but5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r330t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcdjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p278q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iv062"]
+radius = 6.0
+
+[node name="Health" type="Area2D"]
+script = ExtResource("1_5e2k1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.5, -1)
+sprite_frames = SubResource("SpriteFrames_ukqru")
+autoplay = "default"
+frame_progress = 0.825906
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_iv062")
+
+[node name="HealSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_58c75")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

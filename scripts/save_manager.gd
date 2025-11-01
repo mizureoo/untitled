@@ -8,6 +8,7 @@ var data = {
 	"player_health": 3,
 	"score": 0,
 	"collected_food": [],
+	"collected_hearts": [], 
 	"current_level_deaths": 0
 }
 
@@ -17,6 +18,7 @@ func save_game() -> void:
 	data["player_health"] = GameManager.player_health
 	data["score"] = GameManager.score
 	data["collected_food"] = GameManager.collected_food
+	data["collected_hearts"] = GameManager.collected_hearts 
 	data["current_level_deaths"] = GameManager.current_level_deaths
 
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
@@ -33,10 +35,15 @@ func load_game() -> void:
 		var json = JSON.parse_string(content)
 		if typeof(json) == TYPE_DICTIONARY:
 			data = json
+
+			# Ensure all fields exist (for backwards compatibility)
 			if not data.has("collected_food"):
 				data["collected_food"] = []
+			if not data.has("collected_hearts"):  
+				data["collected_hearts"] = []
 			if not data.has("current_level_deaths"):
 				data["current_level_deaths"] = 0
+
 			print("✅ Game loaded successfully")
 	else:
 		print("⚠️ No save file found, using defaults")
@@ -50,6 +57,7 @@ func reset_save() -> void:
 		"player_health": 3,
 		"score": 0,
 		"collected_food": [],
+		"collected_hearts": [], 
 		"current_level_deaths": 0
 	}
 	if FileAccess.file_exists(save_path):
@@ -61,5 +69,6 @@ func apply_to_game() -> void:
 	GameManager.player_health = data.get("player_health", 3)
 	GameManager.score = data.get("score", 0)
 	GameManager.saved_food = data.get("collected_food", [])
+	GameManager.collected_hearts = data.get("collected_hearts", []) 
 	GameManager.current_level_deaths = data.get("current_level_deaths", 0)
 	print("🎮 Save data applied to GameManager")
