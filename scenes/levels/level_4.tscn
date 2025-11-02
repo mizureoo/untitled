@@ -1,8 +1,9 @@
-[gd_scene load_steps=62 format=4 uid="uid://nim3kxpkf34e"]
+[gd_scene load_steps=63 format=4 uid="uid://nim3kxpkf34e"]
 
 [ext_resource type="PackedScene" uid="uid://ccugcsqtogyx5" path="res://scenes/hud.tscn" id="1_0n65g"]
 [ext_resource type="PackedScene" uid="uid://c2spgk05it1ui" path="res://scenes/pause_menu.tscn" id="2_uyomx"]
 [ext_resource type="Texture2D" uid="uid://ccqrub0jt21tt" path="res://assets/backgrounds/Night 4/1.png" id="3_0n65g"]
+[ext_resource type="Theme" uid="uid://dgqe6pc8hyjg7" path="res://main_menu.tres" id="3_1s8bw"]
 [ext_resource type="Texture2D" uid="uid://d1k0oiejfnpga" path="res://assets/backgrounds/Night 4/2.png" id="4_uyomx"]
 [ext_resource type="Texture2D" uid="uid://blrhm3hqp2wep" path="res://assets/backgrounds/Night 4/3.png" id="5_io455"]
 [ext_resource type="Texture2D" uid="uid://bpq0gyhjl606u" path="res://assets/backgrounds/Night 4/4.png" id="6_suy3i"]
@@ -6144,6 +6145,21 @@ _data = {
 &"move": SubResource("Animation_8hw10")
 }
 
+[sub_resource type="Animation" id="Animation_6b6qc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2152, 254)]
+}
+
 [sub_resource type="Animation" id="Animation_4luak"]
 resource_name = "elavation"
 length = 4.0
@@ -6159,21 +6175,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(2152, 254), Vector2(2152, 254), Vector2(2152, 434), Vector2(2152, 434)]
-}
-
-[sub_resource type="Animation" id="Animation_6b6qc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2152, 254)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4aa1a"]
@@ -6312,6 +6313,18 @@ normal = Vector2(-1, 0)
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_uyomx")]
 visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -404.0
+offset_top = 19.0
+offset_right = -20.0
+offset_bottom = 45.0
+grow_horizontal = 0
+theme = ExtResource("3_1s8bw")
+text = "Navigate the factory and ride the elevators carefully."
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

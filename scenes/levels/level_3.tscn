@@ -1,7 +1,8 @@
-[gd_scene load_steps=43 format=4 uid="uid://bd076a0l8r3ve"]
+[gd_scene load_steps=44 format=4 uid="uid://bd076a0l8r3ve"]
 
 [ext_resource type="PackedScene" uid="uid://c2spgk05it1ui" path="res://scenes/pause_menu.tscn" id="1_5f5xw"]
 [ext_resource type="PackedScene" uid="uid://ccugcsqtogyx5" path="res://scenes/hud.tscn" id="2_o3ttr"]
+[ext_resource type="Theme" uid="uid://dgqe6pc8hyjg7" path="res://main_menu.tres" id="3_do6pa"]
 [ext_resource type="Texture2D" uid="uid://vmy3dofdrwkr" path="res://assets/backgrounds/Night 1/1.png" id="3_kdsi4"]
 [ext_resource type="Texture2D" uid="uid://du05n33ose5du" path="res://assets/backgrounds/Night 3/2.png" id="4_jql0x"]
 [ext_resource type="Texture2D" uid="uid://ca8r788pvg6jg" path="res://assets/backgrounds/Night 3/3.png" id="5_do6pa"]
@@ -5803,6 +5804,18 @@ normal = Vector2(-1, 0)
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_5f5xw")]
 visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -404.0
+offset_top = 19.0
+offset_right = -20.0
+offset_bottom = 45.0
+grow_horizontal = 0
+theme = ExtResource("3_do6pa")
+text = "Jump on slimes to defeat them and watch your step!"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
