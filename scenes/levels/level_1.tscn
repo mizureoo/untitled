@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://d1ssirq17kt27"]
+[gd_scene load_steps=40 format=4 uid="uid://d1ssirq17kt27"]
 
 [ext_resource type="Texture2D" uid="uid://vmy3dofdrwkr" path="res://assets/backgrounds/Night 1/1.png" id="1_mkypq"]
 [ext_resource type="Texture2D" uid="uid://bcdedaj3qvlks" path="res://assets/backgrounds/Night 1/2.png" id="2_ndtll"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://dk1qpgufp2lkx" path="res://scenes/player.tscn" id="18_ytidy"]
 [ext_resource type="PackedScene" uid="uid://c2spgk05it1ui" path="res://scenes/pause_menu.tscn" id="20_dp4fg"]
 [ext_resource type="PackedScene" uid="uid://cq500r2surxj8" path="res://scenes/killzone.tscn" id="21_svqqs"]
+[ext_resource type="Texture2D" uid="uid://cg7scy0jcuebn" path="res://assets/sprites/controls/pxkw_escape.png" id="23_31oqk"]
 [ext_resource type="PackedScene" uid="uid://ccugcsqtogyx5" path="res://scenes/hud.tscn" id="23_o7j4k"]
 [ext_resource type="PackedScene" uid="uid://xsaqjawsei74" path="res://scenes/food.tscn" id="25_7o3do"]
 
@@ -2996,6 +2997,23 @@ texture = ExtResource("16_ebb2h")
 [node name="to jump" type="Label" parent="Tutorial/Jump Controls"]
 layout_mode = 2
 text = "to jump"
+
+[node name="Escape" type="HBoxContainer" parent="Tutorial"]
+layout_mode = 0
+offset_left = 667.0
+offset_top = 401.0
+offset_right = 793.0
+offset_bottom = 417.0
+theme = SubResource("Theme_so66j")
+alignment = 1
+
+[node name="Spacebar" type="TextureRect" parent="Tutorial/Escape"]
+layout_mode = 2
+texture = ExtResource("23_31oqk")
+
+[node name="to jump" type="Label" parent="Tutorial/Escape"]
+layout_mode = 2
+text = "to pause / save"
 
 [node name="AreaExit" parent="." instance=ExtResource("17_row31")]
 position = Vector2(2249, 418)
