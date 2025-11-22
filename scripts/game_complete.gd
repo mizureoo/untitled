@@ -5,7 +5,6 @@ extends Control
 @onready var return_button: Button = $HBoxContainer/Return
 
 func _ready():
-	# Delete the save once the player completes the game
 	GameManager.delete_save()
 
 	var text = "Congratulations! You completed the game!\n\n"
@@ -21,6 +20,5 @@ func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_return_pressed() -> void:
-	# Soft reset: keep level_stats for display, clear runtime variables
 	GameManager.reset(false)
 	SceneManager.change_scene("res://scenes/main_menu.tscn")

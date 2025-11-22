@@ -12,7 +12,7 @@ func _ready():
 func _on_body_entered(body: Node2D):
 	if body is PlayerController and not body.is_dead:
 		player_to_respawn = body
-		body.die()  # handles fade-out
+		body.die()
 		timer.start()
 
 func _on_timer_timeout():
@@ -21,13 +21,11 @@ func _on_timer_timeout():
 		return
 
 	if GameManager.player_health > 0:
-		# Respawn player
 		player_to_respawn.global_position = spawn_point.global_position
 		player_to_respawn.is_dead = false
 		player_to_respawn.set_process(true)
 		player_to_respawn.set_physics_process(true)
 
-		# Fade-in effect
 		var tween = create_tween()
 		player_to_respawn.modulate = Color(1, 1, 1, 0)
 		tween.tween_property(player_to_respawn, "modulate:a", 1.0, 0.6)

@@ -30,7 +30,6 @@ func load_settings():
 		mute = data.get("mute", false)
 
 func _apply_on_load():
-	# Automatically apply loaded audio levels
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(music_volume))
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(sfx_volume))
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), mute)

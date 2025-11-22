@@ -2,7 +2,6 @@ extends Node
 
 var save_path = "user://savegame.json"
 
-# Default data
 var data = {
 	"current_level": 1,
 	"player_health": 3,
@@ -14,7 +13,6 @@ var data = {
 }
 
 func save_game() -> void:
-	# Sync GameManager values to save data
 	data["current_level"] = GameManager.level
 	data["player_health"] = GameManager.player_health
 	data["score"] = GameManager.score
@@ -38,7 +36,6 @@ func load_game() -> void:
 		if typeof(json) == TYPE_DICTIONARY:
 			data = json
 
-			# Ensure all fields exist (for backwards compatibility)
 			if not data.has("collected_food"):
 				data["collected_food"] = []
 			if not data.has("collected_hearts"):

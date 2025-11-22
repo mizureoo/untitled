@@ -1,6 +1,5 @@
 extends Control
 
-# --- Nodes ---
 @onready var button_container: VBoxContainer = $ButtonContainer
 @onready var settings_panel: Panel = $SettingsPanel
 @onready var credits_panel: Panel = $CreditsPanel
@@ -15,7 +14,6 @@ extends Control
 @onready var continue_button = $ButtonContainer/Continue
 
 
-# --- Ready ---
 func _ready():
 	button_container.visible = true
 	settings_panel.visible = false
@@ -23,12 +21,9 @@ func _ready():
 	
 	continue_button.visible = SaveManager.has_save()
 
-	# Load settings and apply audio once
 	Settings.load_settings()
 	_apply_audio_settings()
 
-
-# --- Game Buttons ---
 func _on_new_game_pressed():
 	GameManager.reset(true)
 	SaveManager.reset_save()
@@ -41,14 +36,12 @@ func _on_continue_pressed():
 		var level = SaveManager.data.get("current_level", 1)
 		SceneManager.change_scene("res://scenes/levels/level_%d.tscn" % level)
 
-# --- Audio ---
 func _apply_audio_settings():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(Settings.music_volume))
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(Settings.sfx_volume))
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), Settings.mute)
 
 func _load_settings_to_ui():
-	# Only update UI if values differ (prevents slider feedback)
 	if music_slider.value != Settings.music_volume:
 		music_slider.value = Settings.music_volume
 	if sfx_slider.value != Settings.sfx_volume:
@@ -58,7 +51,6 @@ func _load_settings_to_ui():
 
 	_apply_audio_settings()
 
-# --- Button callbacks ---
 func _on_settings_pressed():
 	button_container.visible = false
 	settings_panel.visible = true
@@ -83,7 +75,6 @@ func _on_back_from_settings():
 	button_container.visible = true
 	Settings.save_settings()
 
-# --- Slider / Toggle callbacks ---
 func _on_music_slider_value_changed(value: float):
 	if Settings.music_volume == value:
 		return

@@ -22,11 +22,9 @@ func set_paused(value: bool) -> void:
 	get_tree().paused = _is_paused
 	visible = _is_paused
 
-# Resume
 func _on_resume_pressed() -> void:
 	_is_paused = false
 
-# Save Game (show confirmation first)
 func _on_save_game_pressed() -> void:
 	save_confirm.popup_centered()
 
@@ -38,7 +36,6 @@ func _on_save_confirmed() -> void:
 	SaveManager.save_game()
 	print("✅ Game saved manually")
 
-# Return to main menu (warn first)
 func _on_return_pressed() -> void:
 	exit_confirm.popup_centered()
 
